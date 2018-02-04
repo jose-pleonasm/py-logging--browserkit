@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="IE=edge" >
+	<title>Py-logging browser demo</title>
+	<script src="../py-logging/bundle.js?v=1"></script>
+	<script src="../py-logging/ck-bundle.js?v=1"></script>
+	<script src="./build/browserkit.js?v=1"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		/* eslint-disable */
+		var browserkit = py_logging_browserkit;
+		var rl = logging.getLogger();
+		var myl = logging.getLogger('my');
+		var handler = new logging.ConsoleHandler('', false);
+		//var handler = new browserkit.ImgHttpHandler('http://localhost/?record=', false);
+		var formatter = new browserkit.StylishConsoleFormatter('%(name)-10s %(message)s %(args)O', '', {
+			'common': {
+				'padding': '0 0 0 5px;',
+				//'color': '#fff;',
+				'font-weight': 'bold;',
+				'border-left-style': 'solid;',
+				'border-left-width': '13px;',
+			},
+			'name': {
+				'*': {
+					//'color': '%(color);',
+					'border-left-color': '%(color);',
+				},
+			}
+		});
+		/*var formatter = { format: function (record) {
+			return decodeURIComponent(JSON.stringify(record));
+		} };*/
+
+		handler.setFormatter(formatter);
+		rl.addHandler(handler);
+		rl.setLevel(logging.DEBUG);
+
+		logging.getLogger('Logger').debug('Foo bar', null, { args: [{}] });
+		logging.getLogger('Other').info('Foo bar');
+		logging.getLogger('My').info('Foo bar');
+		logging.getLogger('Player').info('Foo bar');
+		logging.getLogger('character').info('Foo bar');
+		logging.getLogger('invalid').info('Foo bar');
+		logging.getLogger('name').info('Foo bar');
+		logging.getLogger('nick').info('Foo bar');
+		logging.getLogger('main').info('Foo bar');
+		logging.getLogger('sub').warning('Foo bar');
+		logging.getLogger('sub1').warning('Foo bar');
+		logging.getLogger('sub2').warning('Foo bar');
+		logging.getLogger('sub3').warning('Foo bar');
+		logging.getLogger('sub4').warning('Foo bar');
+		logging.getLogger('sub5').warning('Foo bar');
+		logging.getLogger('sub6').warning('Foo bar');
+		logging.getLogger('sub7').warning('Foo bar');
+		logging.getLogger('sub8').warning('Foo bar');
+		logging.getLogger('sub9').warning('Foo bar');
+		logging.getLogger('sub10').warning('Foo bar');
+		logging.getLogger('sub11').warning('Foo bar');
+		logging.getLogger('sup').error('Foo bar', new Error);
+	</script>
+</body>
+</html>
