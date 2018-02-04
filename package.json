@@ -1,0 +1,23 @@
+{
+  "name": "py-logging--browserkit",
+  "version": "1.0.0",
+  "description": "Extension for py-logging",
+  "main": "lib/browserkit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jose-pleonasm/py-logging--browserkit.git"
+  },
+  "keywords": [
+    "py-logging",
+    "browser"
+  ],
+  "author": "jose-pleonasm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jose-pleonasm/py-logging--browserkit/issues"
+  },
+  "homepage": "https://github.com/jose-pleonasm/py-logging--browserkit#readme"
+}
