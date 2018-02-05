@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/jose-pleonasm/py-logging-browserkit/issues"
   },
-  "homepage": "https://github.com/jose-pleonasm/py-logging-browserkit#readme",
-  "dependencies": {
-    "py-logging": "^2.0.0"
-  }
+  "homepage": "https://github.com/jose-pleonasm/py-logging-browserkit#readme"
 }
