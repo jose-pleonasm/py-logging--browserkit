@@ -5,12 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="IE=edge" >
 	<title>Py-logging browser demo</title>
+	<script src="../py-logging/bundle.js?v=1"></script>
+	<script src="../py-logging/ck-bundle.js?v=1"></script>
 	<script src="./build/browserkit.js?v=1"></script>
 </head>
 <body>
 	<script type="text/javascript">
 		/* eslint-disable */
-		var logging = py_logging_browserkit;
+		py_logging_browserkit.install(logging);
 		var rl = logging.getLogger();
 		var myl = logging.getLogger('my');
 
