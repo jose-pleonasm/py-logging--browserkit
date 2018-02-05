@@ -14,12 +14,7 @@
 		"sourceType": "module"
 	},
 	"rules": {
-		"indent": [
-			"error",
-			"tab", {
-				"SwitchCase": 1
-			}
-		],
+		"indent": 0,
 		"linebreak-style": [
 			"error",
 			"unix"
