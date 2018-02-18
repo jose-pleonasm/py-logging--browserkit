@@ -5,26 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="IE=edge" >
 	<title>Py-logging browser demo</title>
-	<script src="../py-logging/bundle.js?v=1"></script>
-	<script src="../py-logging/ck-bundle.js?v=1"></script>
-	<script src="./lib/browserkit.js?v=1"></script>
+	<script src="./py-logging.min.js?v=1"></script>
+	<script src="../lib/browserkit.js?v=1"></script>
 </head>
 <body>
 	<script type="text/javascript">
-		/* eslint-disable */
 		py_logging_browserkit.install(logging);
-		var rl = logging.getLogger();
-		var myl = logging.getLogger('my');
-
-		/*var handler = new logging.ImgHttpHandler('http://localhost/?record=', false);
-		var formatter = new logging.StylishConsoleFormatter('', '', );
-		var formatter = { format: function (record) {
-			return decodeURIComponent(JSON.stringify(record));
-		} };
-
-		handler.setFormatter(formatter);
-		rl.addHandler(handler);
-		rl.setLevel(logging.DEBUG);*/
 
 		logging.basicConfig({
 			level: 'DEBUG',

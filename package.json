@@ -5,7 +5,8 @@
   "main": "lib/browserkit.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify lib/browserkit.js --s py_logging_browserkit > ./build/browserkit.js && uglifyjs ./build/browserkit.js -c > ./build/browserkit.min.js"
+    "build:core": "browserify node_modules/py-logging/core/logging.js --s logging > ./tmp.js && uglifyjs tmp.js -c > ./demo/py-logging.min.js && rm tmp.js",
+    "build": "uglifyjs ./lib/browserkit.js -c > ./build/browserkit.min.js"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,7 @@
   },
   "keywords": [
     "py-logging",
+    "logging",
     "browser"
   ],
   "author": "jose-pleonasm",
@@ -20,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/jose-pleonasm/py-logging-browserkit/issues"
   },
-  "homepage": "https://github.com/jose-pleonasm/py-logging-browserkit#readme"
+  "homepage": "https://github.com/jose-pleonasm/py-logging-browserkit#readme",
+  "devDependencies": {
+    "browserify": "^16.1.0",
+    "py-logging": "^2.0.0",
+    "uglifyjs": "^2.4.11"
+  }
 }
