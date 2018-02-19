@@ -16,21 +16,8 @@
 			level: 'DEBUG',
 			grouping: false,
 			format: '%(name)-10s %(message)s %(args)O',
-			styles: {
-				'common': {
-					'padding': '0 0 0 5px;',
-					//'color': '#fff;',
-					'font-weight': 'bold;',
-					'border-left-style': 'solid;',
-					'border-left-width': '13px;',
-				},
-				'name': {
-					'*': {
-						//'color': '%(color);',
-						'border-left-color': '%(color);',
-					},
-				}
-			}
+			styles: logging.StylishConsoleFormatter.COLORED_BG_NAME,
+			colors: logging.StylishConsoleFormatter.TIGHT_PALLETE,
 		});
 
 		logging.getLogger('Logger').debug('Foo bar', null, { args: [{}] });
