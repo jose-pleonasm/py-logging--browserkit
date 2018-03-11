@@ -7,41 +7,35 @@
 	<title>Py-logging browser demo</title>
 	<script src="./py-logging.min.js?v=1"></script>
 	<script src="../lib/browserkit.js?v=1"></script>
+
+	<script src="./FormUtils.js?v=1"></script>
 </head>
 <body>
+	<div id="container"></div>
 	<script type="text/javascript">
-		py_logging_browserkit.install(logging);
+		var MODE = 'development';
 
+		py_logging_browserkit.install(logging);
 		logging.basicConfig({
-			level: 'DEBUG',
+			level: MODE === 'development' ? 'DEBUG' : 'ERROR',
 			grouping: false,
-			format: '%(name)-10s %(message)s %(args)O',
-			styles: logging.StylishConsoleFormatter.COLORED_BG_NAME,
+			format: '%(name)-14s %(message)s %(args)O',
+			styles: logging.StylishConsoleFormatter.COLORED_NAME,
 			colors: logging.StylishConsoleFormatter.TIGHT_PALLETE,
 		});
 
-		logging.getLogger('Logger').debug('Foo bar', null, { args: [{}] });
-		logging.getLogger('Other').info('Foo bar');
-		logging.getLogger('My').info('Foo bar');
-		logging.getLogger('Player').info('Foo bar');
-		logging.getLogger('character').info('Foo bar');
-		logging.getLogger('invalid').info('Foo bar');
-		logging.getLogger('name').info('Foo bar');
-		logging.getLogger('nick').info('Foo bar');
-		logging.getLogger('main').info('Foo bar');
-		logging.getLogger('sub').warning('Foo bar');
-		logging.getLogger('sub1').warning('Foo bar');
-		logging.getLogger('sub2').warning('Foo bar');
-		logging.getLogger('sub3').warning('Foo bar');
-		logging.getLogger('sub4').warning('Foo bar');
-		logging.getLogger('sub5').warning('Foo bar');
-		logging.getLogger('sub6').warning('Foo bar');
-		logging.getLogger('sub7').warning('Foo bar');
-		logging.getLogger('sub8').warning('Foo bar');
-		logging.getLogger('sub9').warning('Foo bar');
-		logging.getLogger('sub10').warning('Foo bar');
-		logging.getLogger('sub11').warning('Foo bar');
-		logging.getLogger('sup').error('Foo bar', new Error);
+
+		var logger = logging.getLogger();
+		logger.info('Running in ' + MODE + ' mode');
+
+		var container = document.getElementById('container');
+		var form = new FormRenderer();
+		var controller = new FormController(form.getElement());
+		container.appendChild(form.getElement());
+
+		form.renderInput('address', 'text');
+		form.renderInput('language', 'text', 'en');
+		form.renderInput('', 'submit', 'submit');
 	</script>
 </body>
 </html>
