@@ -25,6 +25,9 @@
   "homepage": "https://github.com/jose-pleonasm/py-logging-browserkit#readme",
   "devDependencies": {
     "browserify": "^16.1.0",
+    "fs-then-native": "^2.0.0",
+    "gulp": "^3.9.1",
+    "jsdoc-to-markdown": "^4.0.1",
     "py-logging": "^2.0.0",
     "uglifyjs": "^2.4.11"
   }
