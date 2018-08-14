@@ -11,6 +11,8 @@
         * [new ImgHttpHandler(url)](#new_module_py-logging-browserkit.ImgHttpHandler_new)
     * [.HttpHandler](#module_py-logging-browserkit.HttpHandler) ⇐ <code>Handler</code>
         * [new HttpHandler(url, [headers], [options])](#new_module_py-logging-browserkit.HttpHandler_new)
+    * [.WebSocketClient](#module_py-logging-browserkit.WebSocketClient)
+        * [new WebSocketClient([host], [port], [decoder])](#new_module_py-logging-browserkit.WebSocketClient_new)
     * [.basicConfig([options])](#module_py-logging-browserkit.basicConfig)
 
 <a name="module_py-logging-browserkit.ConsoleFormatter"></a>
@@ -74,6 +76,22 @@ HTTP handler (default method POST).
 | url | <code>string</code> | 
 | [headers] | <code>Object</code> | 
 | [options] | <code>Object</code> | 
+
+<a name="module_py-logging-browserkit.WebSocketClient"></a>
+
+### py-logging-browserkit.WebSocketClient
+**Kind**: static class of [<code>py-logging-browserkit</code>](#module_py-logging-browserkit)  
+<a name="new_module_py-logging-browserkit.WebSocketClient_new"></a>
+
+#### new WebSocketClient([host], [port], [decoder])
+WebSocket client.
+
+
+| Param | Type |
+| --- | --- |
+| [host] | <code>string</code> | 
+| [port] | <code>number</code> | 
+| [decoder] | <code>function</code> | 
 
 <a name="module_py-logging-browserkit.basicConfig"></a>
 
