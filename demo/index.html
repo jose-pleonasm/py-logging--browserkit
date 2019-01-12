@@ -16,18 +16,23 @@
 	<script type="text/javascript">
 		var MODE = 'development';
 
+		commonkit.install(logging);
 		py_logging_browserkit.install(logging);
 		logging.basicConfig({
 			level: MODE === 'development' ? 'DEBUG' : 'ERROR',
 			grouping: false,
-			format: '%(name)-14s %(message)s %(args)O',
-			styles: logging.StylishConsoleFormatter.COLORED_NAME,
+			format: '%(name)-14s %(levelname)-8s %(message)s %(args)O',
+			styles: [logging.StylishConsoleFormatter.COLORED_NAME, logging.StylishConsoleFormatter.COLORED_LEVELNAME],
 			colors: logging.StylishConsoleFormatter.TIGHT_PALLETE,
 		});
 
 
-		var logger = logging.getLogger();
-		logger.info('Running in ' + MODE + ' mode');
+		// var handler = new logging.HttpHandler('http://127.0.0.1:8081/', { 'Content-Type': 'application/json' });
+		// var formatter = new logging.JsonFormatter();
+		// var logger = logging.getLogger();
+		// handler.setFormatter(formatter);
+		// logger.addHandler(handler);
+		// logger.info('Running in ' + MODE + ' mode');
 
 		var container = document.getElementById('container');
 		var form = new FormRenderer();
@@ -37,6 +42,44 @@
 		form.renderInput('address', 'text');
 		form.renderInput('language', 'text', 'en');
 		form.renderInput('', 'submit', 'submit');
+
+
+		// var wsc = new logging.WebSocketClient();
+		// wsc.addHandler({ handle: console.log });
+
+		// var LOGGING = {
+		// 	'version': 1,
+		// 	'formatters': {
+		// 		'standard': {
+		// 			'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+		// 		},
+		// 	},
+		// 	'filters': {
+		// 		'myfilter': {
+		// 			'class': 'logging.Filter',
+		// 		},
+		// 	},
+		// 	'handlers': {
+		// 		'default': {
+		// 			'level': 'INFO',
+		// 			'formatter': 'standard',
+		// 			'class': 'logging.ConsoleHandler',
+		// 			'filters': ['myfilter'],
+		// 		},
+		// 	},
+		// 	'loggers': {
+		// 		'': {
+		// 			'handlers': ['default'],
+		// 			'level': 'INFO',
+		// 		},
+		// 	},
+		// }
+
+
+		// logging.config(LOGGING);
+
+		logging.info('TEST');
+
 	</script>
 </body>
 </html>
