@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:core": "browserify node_modules/py-logging/core/logging.js --s logging > ./tmp.js && uglifyjs tmp.js -c > ./demo/py-logging.min.js && rm tmp.js",
+    "build:commonkit": "browserify node_modules/py-logging/commonkit/index.js --s commonkit > ./tmp.js && uglifyjs tmp.js -c > ./demo/pl-commonkit.min.js && rm tmp.js",
     "build": "uglifyjs ./lib/browserkit.js -c > ./build/browserkit.min.js",
     "doc": "jsdoc2md lib/browserkit.js > API.md"
   },
